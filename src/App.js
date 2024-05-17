@@ -4,7 +4,7 @@ import Home from './Component/Home/Home';
 import Navbar from './Component/Navbar/Navbar';
 import Search from './Component/Search/Search';
 import RentProperty from './Component/RentProperty/RentProperty';
-import Details from './Component/Details/Details'; // Import the Details component
+import Details from './Component/Details/Details'; 
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/Search" element={<Search />} />
         <Route path="/BuyProperty" element={<BuyProperty />} /> 
         <Route path="/RentProperty" element={<RentProperty />} />
-        <Route path="/property/:id" element={<Details />} /> {/* Update to use Details */}
+        <Route path="/property/:id" element={<Details />} /> 
       </Routes>
     </>
   );
