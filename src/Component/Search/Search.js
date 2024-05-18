@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './Search.css';
 
 function Search() {
@@ -164,13 +165,15 @@ function Search() {
             <ul className="results-list">
                 {(detailedResults.length > 0 ? detailedResults : initialDetailedResults).map((detail, index) => (
                     <li className="result-item" key={index}>
-                        <h3>{stripHTML(detail.title)}</h3>
-                        <img src={detail.coverPhoto.url} alt="Cover" />
-                        <p><strong>City:</strong> {detail.location.map(loc => loc.name).join(', ')}</p>
-                        <p><strong>Purpose:</strong> {detail.purpose}</p>
-                        <p><strong>Type:</strong> {detail.category[0].name}</p>
-                        <p><strong>Price:</strong> {detail.price}</p>
-                        <p><strong>Description:</strong> {stripHTML(detail.description)}</p>
+                        <Link to={`/property/${detail.externalID}`}>
+                            <h3>{stripHTML(detail.title)}</h3>
+                            <img src={detail.coverPhoto.url} alt="Cover" />
+                            <p><strong>City:</strong> {detail.location.map(loc => loc.name).join(', ')}</p>
+                            <p><strong>Purpose:</strong> {detail.purpose}</p>
+                            <p><strong>Type:</strong> {detail.category[0].name}</p>
+                            <p><strong>Price:</strong> {detail.price}</p>
+                            <p><strong>Description:</strong> {stripHTML(detail.description)}</p>
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -179,4 +182,3 @@ function Search() {
 }
 
 export default Search;
-
