@@ -6,6 +6,7 @@ import Search from './Component/Search/Search';
 import RentProperty from './Component/RentProperty/RentProperty';
 import Details from './Component/Details/Details'; 
 import { Route, Routes } from 'react-router-dom';
+import FavPro from './Component/FavPro/FavPro';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/BuyProperty" element={<BuyProperty />} /> 
         <Route path="/RentProperty" element={<RentProperty />} />
         <Route path="/property/:id" element={<Details />} /> 
+        <Route path="/WatchLater" element={<FavPro />} />
       </Routes>
     </>
   );
