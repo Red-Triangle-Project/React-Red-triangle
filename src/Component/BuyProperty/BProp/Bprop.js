@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../../Modal/Modal';
 
 function BProperty({ property }) {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(null);
+  const openModal = (property) => {
+      setShowModal(true);
+      setSelectedProperty(property);
+  };
+  const closeModal = () => {
+      setShowModal(false);
+      setSelectedProperty(null);
+  };
+
+
   return (
     <div className="property-card">
       <Link to={`/property/${property.externalID}`}>
@@ -16,6 +29,12 @@ function BProperty({ property }) {
         <img src= {property.agency.logo.url} alt="AgencyPhoto"/>
         <p>{property.isVerified ? 'Verified' : 'Not Verified'}</p>
       </Link>
+      <button onClick={() => openModal(property)}>Add to Favorite</button>
+            <Modal
+                show={showModal}
+                onClose={closeModal}
+                property={selectedProperty}
+            />
     </div>
   );
 }

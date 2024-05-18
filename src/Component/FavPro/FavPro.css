@@ -1,0 +1,20 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .property {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .property img {
+    max-width: 100%;
+  }
+  .property h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .property p {
+    margin: 0;
+  }
