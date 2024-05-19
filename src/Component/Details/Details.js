@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import millify from 'millify'; // Import millify
+import millify from 'millify';
+import Modal from '../Modal/Modal.js';
 
 function Details() {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchPropertyDetails = async () => {
@@ -44,6 +46,14 @@ function Details() {
     photos
   } = property;
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div>
       <img src={coverPhoto.url} alt={title} />
@@ -53,7 +63,7 @@ function Details() {
       <p>Baths: {baths}</p>
       <p>Area: {millify(area)} sqft</p>
       <p>Agency: {agency.name}</p>
-      <img src={agency.logo.url} alt="Agency Photo" />
+      <img src={agency.logo.url} alt="AgencyPhoto" />
       <p>Verified: {isVerified ? 'Yes' : 'No'}</p>
       <p>Description: {description}</p>
       <p>Type: {type}</p>
@@ -75,6 +85,12 @@ function Details() {
           ))}
         </div>
       </div>
+      <button onClick={openModal}>Add to Favorite</button>
+      <Modal
+        show={showModal}
+        onClose={closeModal}
+        property={property}
+      />
     </div>
   );
 }
