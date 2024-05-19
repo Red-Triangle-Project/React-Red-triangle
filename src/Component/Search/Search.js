@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import millify from 'millify'; // Import millify
 import './Search.css';
 
 function Search() {
@@ -171,7 +172,7 @@ function Search() {
                             <p><strong>City:</strong> {detail.location.map(loc => loc.name).join(', ')}</p>
                             <p><strong>Purpose:</strong> {detail.purpose}</p>
                             <p><strong>Type:</strong> {detail.category[0].name}</p>
-                            <p><strong>Price:</strong> {detail.price}</p>
+                            <p><strong>Price:</strong> {millify(detail.price)}</p>
                             <p><strong>Description:</strong> {stripHTML(detail.description)}</p>
                         </Link>
                     </li>

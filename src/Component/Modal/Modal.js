@@ -1,13 +1,14 @@
-//Modal.js
 import React from 'react';
 import { Modal as BootstrapModal, Button } from 'react-bootstrap';
 import axios from 'axios';
+import millify from 'millify'; // Import millify
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Modal.css'; // Import the CSS file
+
 function Modal({ show, onClose, property }) {
     const handleSaveToFavorites = async () => {
         if (property) {
-            const response = await axios.post('http://localhost:3001/addProperty', {
+            await axios.post('http://localhost:3001/addProperty', {
                 name: property.title,
                 image: property.coverPhoto?.url,
                 price: property.price,
@@ -16,13 +17,14 @@ function Modal({ show, onClose, property }) {
             onClose();
         }
     };
+
     return (
         <BootstrapModal show={show} onHide={onClose}>
             <BootstrapModal.Body>
                 {property && (
                     <div>
                         <img src={property.coverPhoto?.url} alt={property.title} className="property-image" />
-                        <p>{property.price}</p>
+                        <p>Price: {millify(property.price)}</p>
                         <p>{property.title}</p>
                     </div>
                 )}
@@ -38,4 +40,5 @@ function Modal({ show, onClose, property }) {
         </BootstrapModal>
     );
 }
+
 export default Modal;

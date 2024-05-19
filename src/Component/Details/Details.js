@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import millify from 'millify'; // Import millify
 
 function Details() {
   const { id } = useParams();
@@ -47,12 +48,12 @@ function Details() {
     <div>
       <img src={coverPhoto.url} alt={title} />
       <h1>{title}</h1>
-      <p>Price: {price} {rentFrequency}</p>
+      <p>Price: {millify(price)} {rentFrequency}</p>
       <p>Rooms: {rooms}</p>
       <p>Baths: {baths}</p>
-      <p>Area: {area} sqft</p>
+      <p>Area: {millify(area)} sqft</p>
       <p>Agency: {agency.name}</p>
-      <img src= {agency.logo.url} alt="AgencyPhoto"/>
+      <img src={agency.logo.url} alt="Agency Photo" />
       <p>Verified: {isVerified ? 'Yes' : 'No'}</p>
       <p>Description: {description}</p>
       <p>Type: {type}</p>
