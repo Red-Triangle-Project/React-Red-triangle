@@ -38,7 +38,7 @@ function Footer() {
 
             <div className="footer__info container">
                 <span className="footer__copy">
-                    &#169; Triangle. All rights reserved
+                    &#169;Triangle. All rights reserved
                 </span>
             </div>
         </footer>
