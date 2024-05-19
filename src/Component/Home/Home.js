@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import home from './home.jpg'
-
+ 
 function Home() {
     return (
         <section className="home section" id="home">
@@ -13,11 +13,11 @@ function Home() {
                     </h1>
                     <p className="home__description">
                     Easily find your perfect property hassle-free. Say goodbye to the struggle of house
-                   hunting and discover a variety of residences tailored to your needs effortlessly.
+                    hunting and discover a variety of residences tailored to your needs effortlessly.
                     </p>
-
+ 
                  
-
+ 
                     <div className="home__value">
                         <div>
                             <h1 className="home__value-number">
@@ -45,10 +45,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
+ 
                 <div className="home__images">
                     <div className="home__orbe"></div>
-
+ 
                     <div className="home__img">
                         <img src={home} alt="Home" />
                     </div>

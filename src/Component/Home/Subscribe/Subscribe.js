@@ -1,6 +1,6 @@
 import React from 'react';
 import './Subscribe.css'
-
+ 
 function Subscribe() {
     return (
         <main>
@@ -10,8 +10,8 @@ function Subscribe() {
                         Get Started with Triangle
                     </h1>
                     <p className="subscribe__description">
-                        Subscribe and find super attractive price
-                        quotes from us, Find your residence soon
+                    Triangle is your top spot for property needs, offering seamless experiences from buying to renting. <br/>
+                     With diverse listings and expert guidance, find your dream property effortlessly!
                     </p>
                     <a href="#" className="button subscribe__button">
                         Get Started
@@ -21,5 +21,5 @@ function Subscribe() {
         </main>
     );
 }
-
+ 
 export default Subscribe;
