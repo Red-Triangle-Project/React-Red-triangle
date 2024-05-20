@@ -9,7 +9,7 @@ const ReviewCard = () => {
                 possimus asperiores hic nemo id a molestiae minus impedit!</p>
             
             <div className="review-card-section">
-                {/* Review Item 1 */}
+                
                 <div className="review-card-item">
                     <div className="review-card-top">
                         <div className="review-card-image">
@@ -32,7 +32,7 @@ const ReviewCard = () => {
                     </article>
                 </div>
 
-                {/* Review Item 2 */}
+                
                 <div className="review-card-item">
                     <div className="review-card-top">
                         <div className="review-card-image">
@@ -55,7 +55,7 @@ const ReviewCard = () => {
                     </article>
                 </div>
 
-                {/* Review Item 3 */}
+                
                 <div className="review-card-item">
                     <div className="review-card-top">
                         <div className="review-card-image">

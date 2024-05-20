@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
-// import './scrollreveal.min'
-// import './swiper-bundle.min'
+
 
 const ScrollEffects = () => {
     useEffect(() => {
-        // Scroll Sections Active Link
         const sections = document.querySelectorAll('section[id]');
 
         function scrollActive() {
@@ -28,10 +26,9 @@ const ScrollEffects = () => {
         }
         
 
-        // Show Scroll Up
         function scrollUp() {
             const scrollUp = document.getElementById('scroll-up');
-            if (scrollUp) { // Check if scrollUp element exists
+            if (scrollUp) {
                 if (window.scrollY >= 350) {
                     scrollUp.classList.add('show-scroll');
                 } else {
@@ -40,12 +37,10 @@ const ScrollEffects = () => {
             }
         }
 
-        // Dark Light Theme
         const themeButton = document.getElementById('theme-button');
         const darkTheme = 'dark-theme';
         const iconTheme = 'bx-sun';
 
-        // Previously selected topic (if user selected)
         const selectedTheme = localStorage.getItem('selected-theme');
         const selectedIcon = localStorage.getItem('selected-icon');
 
@@ -64,13 +59,11 @@ const ScrollEffects = () => {
             localStorage.setItem('selected-icon', getCurrentIcon());
         });
 
-        // Scroll Reveal Animation
         const sr = ScrollReveal({
             origin: 'top',
             distance: '60px',
             duration: 2500,
             delay: 400,
-            //reset: true
         });
 
         sr.reveal(`.home__title, .popular__container, .subscribe__container, .footer__container`);
@@ -82,14 +75,13 @@ const ScrollEffects = () => {
         sr.reveal(`.value__images, .contact__content`, { origin: 'left' });
         sr.reveal(`.value__content, .contact__images`, { origin: 'right' });
 
-        // Cleanup
         return () => {
             window.removeEventListener('scroll', scrollActive);
             window.removeEventListener('scroll', scrollUp);
         };
-    }, []); // Empty dependency array means it will run only once on mount
+    }, []); 
 
-    return null; // Since this is a utility component, it doesn't render anything
+    return null; 
 };
 
 export default ScrollEffects;
