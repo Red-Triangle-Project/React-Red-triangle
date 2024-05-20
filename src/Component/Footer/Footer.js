@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
 
 function Footer() {
     return (
@@ -28,8 +28,8 @@ function Footer() {
                             <a href="https://www.instagram.com/" target="_blank" className="footer__social-link">
                                 <i className='bx bxl-instagram-alt'></i>
                             </a>
-                            <a href="https://www.pinterest.com/" target="_blank" className="footer__social-link">
-                                <i className='bx bxl-pinterest'></i>
+                            <a href="https://github.com/Red-Triangle-Project" target="_blank" className="footer__social-link">
+                                <i className='bx bxl-github'></i>
                             </a>
                         </ul>
                     </div>

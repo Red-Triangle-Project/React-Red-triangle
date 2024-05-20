@@ -1,0 +1,8 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Add background color for better visibility */
+  border-radius: 1rem; /* Make the icons circular */
+  padding: 40px; /* Add padding to make the icons larger */
+  /* margin: 0px; */
+}
+ 

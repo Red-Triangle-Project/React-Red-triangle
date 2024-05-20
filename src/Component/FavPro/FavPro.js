@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
 import millify from 'millify';
-import "./FavPro.css"; // Import the CSS file
+import "./FavPro.css";
 
 function stripHtmlTags(html) {
     let tmp = document.createElement("div");
@@ -28,11 +27,11 @@ function FavPro (){
              setProperties((prev) => prev.filter(prop => prop.id !== id));
     }
     return (
-        <div className="container"> {/* Add container class */}
+        <div className="container">
             <h2>Favorite Properties</h2>
             {properties.map(property => (
-                <div className="property" key={property.id}> {/* Add property class */}
-                    <img src={property.image} alt={property.name}/> {/* Add alt attribute */}
+                <div className="property" key={property.id}>
+                    <img src={property.image} alt={property.name}/>
                     <h3>{property.name}</h3>
                     <p>Price: ${millify(property.price)}</p>
                     <p>Details: {stripHtmlTags(property.details)}</p>

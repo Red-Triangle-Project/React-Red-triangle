@@ -23,6 +23,7 @@
   }
   
   .subscribe__button {
+    text-decoration: none;
     border: 2px solid #fff;
     background: var(--first-color-light);
     font-size: var(--small-font-size);

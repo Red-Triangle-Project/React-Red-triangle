@@ -3,10 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background: linear-gradient(to right, rgba(94, 94, 94, 0.8), rgba(0, 0, 0, 0.8));
   z-index: var(--z-fixed);
-  transition: .4s;
-  /* For animation dark mode */
+  transition: top 0.3s, background-color 0.4s, background 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 1px 4px hsla(228, 4%, 15%, .1);
 }
  
 .nav {
@@ -14,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
  
 .nav__logo {
@@ -23,6 +28,8 @@
   column-gap: .25rem;
   font-weight: var(--font-medium);
   transition: .3s;
+  text-decoration: none; /* Remove underline */
+  font-size: 1.5rem; /* Adjust font size */
 }
  
 .nav__logo i {
@@ -31,6 +38,87 @@
  
 .nav__logo:hover {
   color: var(--first-color);
+}
+ 
+.nav__menu {
+  display: flex;
+  align-items: center;
+}
+ 
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+  margin: 0;
+}
+ 
+.nav__item {
+  margin: 0 1rem; /* Adjust spacing between items */
+}
+ 
+.nav__link {
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  padding: .5rem;
+  font-size: 1rem; /* Adjust font size */
+  transition: color 0.3s ease;
+}
+ 
+.nav__link i {
+  margin-right: .5rem; /* Space between icon and text */
+}
+ 
+.nav__link:hover {
+  color: var(--first-color);
+}
+ 
+.nav__button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: var(--first-color);
+  color: #fff;
+  border: none;
+  border-radius: .25rem;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease;
+}
+ 
+.nav__button:hover {
+  background-color: var(--first-color-dark);
+}
+ 
+.change-theme {
+  color: var(--text-color-light);
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 1rem; /* Space between theme button and other elements */
+}
+ 
+.scroll-header {
+  background-color: var(--body-color);
+}
+ 
+.scroll-header .nav__logo {
+  color: var(--first-color);
+}
+ 
+.scroll-header .nav__link {
+  color: var(--text-color);
+}
+ 
+.scroll-header .change-theme {
+  color: var(--title-color);
+}
+ 
+.active-link {
+  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(222, 66%, 47%));
+  color: #fff;
+  box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
+  border-radius: .25rem;
 }
  
 @media screen and (max-width: 1023px) {
@@ -46,9 +134,6 @@
     padding: 1.30rem 3rem;
     border-radius: 1.25rem;
     transition: .4s;
-  }
- 
-  .nav__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,29 +155,51 @@
   }
 }
  
-/* Change background header */
-.scroll-header {
-  background-color: var(--body-color);
-  box-shadow: 0 1px 4px hsla(228, 4%, 15%, .1);
+/* Additional Media Queries for Small and Large Devices */
+@media screen and (min-width: 576px) {
+  .nav__menu {
+    width: 342px;
+  }
+ 
+  .nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
  
-.scroll-header .nav__logo {
-  color: var(--first-color);
-}
+@media screen and (min-width: 1023px) {
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
  
-.scroll-header .change-theme {
-  color: var(--title-color);
-}
+  .nav__link {
+    color: var(--text-color-light);
+  }
  
-/* Active link */
-.active-link {
-  background: linear-gradient(101deg,
-      hsl(228, 66%, 53%),
-      hsl(222, 66%, 47%));
-  color: #fff;
-  box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
-}
+  .nav__link i {
+    display: none;
+  }
  
+  .nav__button {
+    display: inline-block;
+  }
+ 
+  .change-theme {
+    margin: 0 3rem;
+    color: var(--text-color-light);
+  }
+ 
+  .scroll-header .nav__link,
+  .scroll-header .change-theme {
+    color: var(--text-color);
+  }
+ 
+  .scroll-header .active-link {
+    color: var(--first-color);
+  }
+}
  
 /* ---------------------------- */
 /*=============== BREAKPOINTS ===============*/

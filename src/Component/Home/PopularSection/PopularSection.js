@@ -7,14 +7,14 @@ const PopularSection = () => {
   const residences = [
     {
       img: popular2,
-      link: '/RentProperty', // Add the link destination here
+      link: '/RentProperty',
       price: '1,200 - 2,500',
       title: 'Popular Houses for Rent',
       description: 'Explore our array of ready-to-occupy residences, eagerly awaiting your arrival. From delightful starter homes to opulent dwellings, our assortment presents a wide spectrum of choices to align with your tastes and financial plan. Seize the chance to secure your ideal rental abode – peruse our listings now and discover the perfect fit for you!',
     },
     {
       img: popular3,
-      link: '/BuyProperty', // Add the link destination here
+      link: '/BuyProperty',
       price: '250,000 - 750,000',
       title: 'Popular Houses for Sale',
       description: 'Dive into our collection of move-in ready homes that are waiting for you to make them your own. From charming starter houses to luxurious estates, our inventory offers a diverse range of options to meet your preferences and budget. Don\'t miss out on the opportunity to own your dream home – browse our listings and find your perfect match today!',
