@@ -1,4 +1,4 @@
-.property {
+.favpro__property {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,13 +7,17 @@
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
 }
 
-.property-content {
+.favpro__property-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.favpro__card-button {
+.favpro__delete-button {
   font-size: var(--small-font-size);
   padding: 14px 0;
   width: 100%;
@@ -24,3 +28,28 @@
   margin-top: 10px;
 }
 
+.favpro__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.favpro__description {
+  flex-grow: 1;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.favpro__description.expanded {
+  max-height: none;
+}
+
+.favpro__description p {
+  margin: 0;
+}
+
+.favpro__toggle-btn {
+  margin-top: 10px;
+}
