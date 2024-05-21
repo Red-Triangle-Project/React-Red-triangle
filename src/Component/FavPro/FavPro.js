@@ -28,11 +28,11 @@ function Description({ text }) {
     };
 
     return (
-        <div>
-            <p className="Bp__description">
+        <div className={`favpro__description ${isExpanded ? 'expanded' : ''}`}>
+            <p>
                 {isExpanded ? strippedText : truncateText(strippedText, 20)}
             </p>
-            <Button variant="link" onClick={toggleExpansion}>
+            <Button variant="link" onClick={toggleExpansion} className="favpro__toggle-btn">
                 {isExpanded ? "See Less" : "See More"}
             </Button>
         </div>
@@ -65,25 +65,25 @@ function FavPro() {
     }
 
     return (
-        <section className="popular section" id="Buypopular">
+        <section className="favpro__section popular section" id="Buypopular">
             <Container>
-                <div className="popular__container">
-                    <article className="Bp__card">
-                        <span className="section__subtitle">Your Choice</span>
-                        <h2 className="section__title">Favorite Properties<span>.</span></h2>
+                <div className="favpro__container popular__container">
+                    <article className="favpro__card Bp__card">
+                        <span className="favpro__subtitle section__subtitle">Your Choice</span>
+                        <h2 className="favpro__title section__title">Favorite Properties<span>.</span></h2>
                         <Row>
                             {properties.map(property => (
-                                <Col key={property.id}>
-                                    <div className="property">
-                                        <div className="property-content">
-                                            <img src={property.image} alt={property.name} className="Bp__img" />
-                                            <h2 className="popular__title">{property.name}</h2>
-                                            <h2 className="popular__price">
+                                <Col key={property.id} xs={12} sm={6} md={6} lg={4}>
+                                    <div className="favpro__property property">
+                                        <div className="favpro__property-content property-content">
+                                            <img src={property.image} alt={property.name} className="favpro__img Bp__img" />
+                                            <h2 className="favpro__property-title popular__title">{property.name}</h2>
+                                            <h2 className="favpro__property-price popular__price">
                                                 <span>$</span>Price: ${millify(property.price)}
                                             </h2>
                                             <Description text={property.details} />
                                         </div>
-                                        <Button variant="danger" onClick={() => deleteItem(property.id)} className='favpro__card-button'>Delete</Button>
+                                        <Button variant="danger" onClick={() => deleteItem(property.id)} className='favpro__delete-button favpro__card-button'>Delete</Button>
                                     </div>
                                 </Col>
                             ))}
@@ -96,3 +96,4 @@ function FavPro() {
 }
 
 export default FavPro;
+//j
