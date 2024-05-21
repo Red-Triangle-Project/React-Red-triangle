@@ -109,3 +109,7 @@ body.dark-theme {
   color: var(--text-color); /* Use the same text color as other dark theme elements */
 }
  
+.dark-theme .Details__card-button {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+}
