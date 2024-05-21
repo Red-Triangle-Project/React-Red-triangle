@@ -113,3 +113,15 @@ body.dark-theme {
   background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
   color: var(--text-color); / Use the same text color as other dark theme elements */
 }
+.dark-theme .Bp__description {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+}
+
+.dark-theme .modal-content {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+}
+
+/* Bp__description */
+/* modal-content */
