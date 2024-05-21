@@ -1,0 +1,264 @@
+$optionDefaultColours: #ED5565, #FC6E51, #FFCE54, #2ECC71, #5D9CEC, #AC92EC;
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Details__cont {
+  padding: 0px 90px 0px 90px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.photo-gallery{
+    padding: 0px 0px 10px 60px;
+}
+.credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: inherit;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 2000px;
+  width: calc(100% - 100px);
+  height: 400px;
+}
+  
+
+.option:nth-child(1) {
+  --defaultBackground: #ED5565;
+}
+.option:nth-child(2) {
+  --defaultBackground: #FC6E51;
+}
+.option:nth-child(3) {
+  --defaultBackground: #FFCE54;
+}
+.option:nth-child(4) {
+  --defaultBackground: #4b66ef;
+}
+.option:nth-child(5) {
+  --defaultBackground: #5D9CEC;
+}
+.option:nth-child(6) {
+  --defaultBackground: #f46c12;
+}
+.option:nth-child(7) {
+  --defaultBackground: #AC92EC;
+}
+.option:nth-child(8) {
+  --defaultBackground: #5dd44d;
+}
+.option:nth-child(9) {
+  --defaultBackground: #5f24f3;
+}
+.option:nth-child(10) {
+  --defaultBackground: #d2f966;
+}
+
+
+.option {
+    position: relative;
+    overflow: hidden;
+    min-width: 110px; /* Adjust this value to change the initial size */
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+    background-size: auto 100%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  }
+
+.option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 2000px; /* Adjust the maximum size */
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+  }
+
+.option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+
+.option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option .label {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: var(--defaultBackground);
+}
+
+.option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+
+.option .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.option .label .info .sub {
+  transition-delay: 0.1s;
+}
+
+.Details__description {
+    font-size: 20px;
+    margin: 0;
+}
+ 
+.gallery {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    margin-bottom: 20px; /* Add some space between gallery and logo */
+  }
+ 
+.Details__logo-container {
+    display: flex;
+    padding: 140px 0px 0px 70px;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 20px; /* Add some space between logo and options */
+}
+
+.Details__logodescription {
+    font-size: 40px;
+    margin-left: 20px; /* Add some space between the image and the description */
+}
+
+.Details__logo {
+    width: 90px;  /* Adjust the width as needed */
+    height: 90px; /* Adjust the height as needed */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the box */
+    border: 2px solid blue; /* Adds a blue border around the image */
+    padding:0%;
+    margin: 0px 0px 10px;
+}
+
+
+.Details__container {
+  max-width: fit-content;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center the items vertically */
+  align-items: center; /* Center the items horizontally */
+  padding: 50px 90px 0px 90px;
+  }
+
+
+  .verified-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 20px 0px 20px 0px ;
+}
+ 
+.verified__img {
+    width: 30px;  /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the box */
+    margin-right: 0.5rem; /* Space between the icon and text */
+}
+
+.Details__card-button {
+    font-size: var(--small-font-size);
+    padding: 14px 0;
+    width: 100%;
+    border-radius: .25rem;
+    background: var(--first-color-lighten);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    box-shadow: none;
+  }
+  
+  .Details__card-button:hover {
+    background-color: var(--first-color);
+    color: #fff;
+  }
+
+/* favorite button*/
+.favorite__card-button {
+    font-size: var(--small-font-size);
+    padding: 14px 0;
+    width: 100%;
+    border-radius: .25rem;
+    background: var(--second-color);
+    color: var(--body-color);
+    font-weight: var(--font-semi-bold);
+    box-shadow: none;
+  }
+  
+ /* ==================================================== */
+  @media (max-width: 768px) {
+    .options {
+      flex-direction: column;
+    }
+    .option {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Details__logodescription {
+      font-size: 24px;
+    }
+  
+    .Details__container {
+      padding: 20px;
+    }
+  
+    .favorite__card-button, .Details__card-button {
+      font-size: var(--small-font-size);
+    }
+  }

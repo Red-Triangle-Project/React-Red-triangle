@@ -41,17 +41,21 @@ function Header() {
                         </li>
  
                         <li className="nav__item">
+                        <Link to="/BuyProp" className="nav__link">
                         <a href="#Buypopular" className="nav__link">
                                 <i className='bx bx-building-house'></i>
                                 <span>Sale</span>
                                 </a>
+                                </Link>
                         </li>
  
                         <li className="nav__item">
+                        <Link to="/RentProp" className="nav__link">
                         <a href="#Rentpopular" className="nav__link">
                                 <i className='bx bx-building-house'></i>
                                 <span>Rent</span>
                                 </a>
+                                </Link>
                         </li>
  
                         <li className="nav__item">
@@ -75,9 +79,6 @@ function Header() {
                          </li>
                     </ul>
                 </div>
- 
-               
- 
                 <ThemeSwitcher/>
  
                 <a href="/Search" className="button nav__button">Search </a>

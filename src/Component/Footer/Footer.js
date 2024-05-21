@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-
 function Footer() {
     return (
         <footer className="footer section">
@@ -14,13 +13,11 @@ function Footer() {
                         the best place to live for them.
                     </p>
                 </div>
-
                 <div className="footer__content">
                     <div>
                         <h3 className="footer__title">
                             Follow us
                         </h3>
-
                         <ul className="footer__social">
                             <a href="https://www.facebook.com/" target="_blank" className="footer__social-link">
                                 <i className='bx bxl-facebook-circle'></i>
@@ -35,7 +32,6 @@ function Footer() {
                     </div>
                 </div>
             </div>
-
             <div className="footer__info container">
                 <span className="footer__copy">
                     &#169;Triangle. All rights reserved
@@ -44,5 +40,4 @@ function Footer() {
         </footer>
     );
 }
-
 export default Footer;

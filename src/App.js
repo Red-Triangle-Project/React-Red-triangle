@@ -9,7 +9,8 @@ import ContactSection from './Component/Home/ContactSection/ContactSection'
 import Footer from './Component/Footer/Footer'
 import ScrollEffects from './Component/Home/ScrollEffects /ScrollEffects'
 import AboutUs from './Component/Home/AboutUs/AboutUs';
- 
+import BuyProperty from './Component/BuyProperty/BuyProperty';
+import RentProperty from './Component/RentProperty/RentProperty';
  
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Route path ="/Search" element = {<Search/>}/>
       <Route path="/property/:id" element={<Details />} />
         <Route path="/WatchLater" element={<FavPro />} />
+        <Route path="/BuyProp" element={<BuyProperty/>} />
+      <Route path="/RentProp" element={<RentProperty />} />
       </Routes>
       <Header />
       <ContactSection />
