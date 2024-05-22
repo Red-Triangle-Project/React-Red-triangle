@@ -13,25 +13,25 @@ const ValueSection = () => {
         {
             icon: 'bxs-shield-x',
             title: 'Best interest rates on the market',
-            description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.',
+            description: 'We offer the most competitive interest rates, ensuring you get the best deal available.',
         },
         {
             icon: 'bxs-x-square',
             title: 'Prevent unstable prices',
-            description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.',
+            description: 'Our pricing is stable and transparent, protecting you from unexpected cost fluctuations.',
         },
         {
             icon: 'bxs-bar-chart-square',
             title: 'Best prices on the market',
-            description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.',
+            description: 'Enjoy unbeatable prices with our commitment to providing the best value for your investment.',
         },
         {
             icon: 'bxs-check-square',
             title: 'Security of your data',
-            description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.',
+            description: 'Your data is safe with us, thanks to our stringent security measures and protocols.',
         },
     ];
-
+    
     return (
         <section className="value section" id="value">
             <div className="value__container container grid">
