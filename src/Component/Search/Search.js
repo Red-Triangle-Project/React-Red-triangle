@@ -13,9 +13,16 @@ function Search() {
     const [initialResults, setInitialResults] = useState([]);
     const [initialDetailedResults, setInitialDetailedResults] = useState([]);
 
-    const stripHTML = (html) => {
+    const stripHTML = (html, expanded) => {
         const doc = new DOMParser().parseFromString(html, 'text/html');
-        return doc.body.textContent || "";
+        let textContent = doc.body.textContent || "";
+
+        // If not expanded, limit the text to 50 characters
+        if (!expanded) {
+            textContent = textContent.substring(0, 50) + "...";
+        }
+
+        return textContent;
     };
 
     useEffect(() => {
@@ -151,31 +158,52 @@ function Search() {
         }
     };
 
+    const toggleDescription = (index) => {
+        setDetailedResults(prevResults => 
+            prevResults.map((result, i) => 
+                i === index ? { ...result, expanded: !result.expanded } : result
+            )
+        );
+    };
+
+    const toggleButtonText = (expanded) => {
+        return expanded ? 'See less' : 'Go to details ';
+    };
+
     return (
         <div className="search-container">
-            <input 
-                className="search-input" 
-                type="text" 
-                value={query} 
-                onChange={handleInputChange} 
-                placeholder="Search..." 
-            />
-            <button className="search-button" onClick={handleSearch}>Search</button>
+            <div className="search-input-container">
+                <input 
+                    className="search-input" 
+                    type="text" 
+                    value={query} 
+                    onChange={handleInputChange} 
+                    placeholder="Search..." 
+                />
+                <button className="search-button" onClick={handleSearch}>Search</button>
+            </div>
             {loading && <p className="loading-message">Loading...</p>}
             {error && <p className="error-message">{error}</p>}
             <ul className="results-list">
                 {(detailedResults.length > 0 ? detailedResults : initialDetailedResults).map((detail, index) => (
                     <li className="result-item" key={index}>
                         <Link to={`/property/${detail.externalID}`}>
-                            <h3>{stripHTML(detail.title)}</h3>
-                            <img src={detail.coverPhoto.url} alt="Cover" />
-                            <p><strong>City:</strong> {detail.location.map(loc => loc.name).join(', ')}</p>
-                            <p><strong>Purpose:</strong> {detail.purpose}</p>
-                            <p><strong>Type:</strong> {detail.category[0].name}</p>
-                            <p><strong>Price:</strong> {millify(detail.price)}</p>
-                            <p><strong>Description:</strong> {stripHTML(detail.description)}</p>
+                            <h3 className='banana'>{stripHTML(detail.title)}</h3>
+                            <img className='banana' src={detail.coverPhoto.url} alt="Cover" />
+                            <div className="result-item-content">
+                                <p className='banana'><strong className='banana'>City:</strong> {detail.location.map(loc => loc.name).join(', ')}</p>
+                                <p className='banana'><strong className='banana'>Purpose:</strong> {detail.purpose}</p>
+                                <p className='banana'><strong className='banana'>Type:</strong> {detail.category[0].name}</p>
+                                <p className='banana'><strong className='banana'>Price:</strong> {millify(detail.price)}</p>
+                                <p className={`result-item-description ${detail.expanded ? 'expanded' : ''}`} ><strong className='banana'>Description:</strong> {stripHTML(detail.description, detail.expanded)}</p>
+                                
+                                <button className="toggle-btn" onClick={() => toggleDescription(index)}>
+                                    {toggleButtonText(detail.expanded)}
+                                </button>
+                            </div>
                         </Link>
                     </li>
+
                 ))}
             </ul>
         </div>

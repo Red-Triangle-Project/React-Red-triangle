@@ -122,6 +122,34 @@ body.dark-theme {
   background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
   color: var(--text-color); / Use the same text color as other dark theme elements */
 }
+.dark-theme .search-input-container {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+}
+.dark-theme .search-container {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+}
+
+.dark-theme .result-item {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+  color: var(--text-color);
+  
+}
+.dark-theme .banana {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+  color: var(--text-color);
+  
+}
+
+.dark-theme .result-item-description {
+  background-color: var(--container-color); /* Use the same color as other dark theme backgrounds /
+  color: var(--text-color); / Use the same text color as other dark theme elements */
+  color: var(--text-color);
+  
+}
 
 /* Bp__description */
 /* modal-content */
