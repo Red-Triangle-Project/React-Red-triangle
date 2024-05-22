@@ -11,7 +11,8 @@ import ScrollEffects from './Component/Home/ScrollEffects /ScrollEffects'
 import AboutUs from './Component/Home/AboutUs/AboutUs';
 import BuyProperty from './Component/BuyProperty/BuyProperty';
 import RentProperty from './Component/RentProperty/RentProperty';
- 
+import ScrollUpButton from './Component/ScrollUpButton/ScrollUpButton'
+ //
 function App() {
   return (
  <>
@@ -27,6 +28,7 @@ function App() {
       <ContactSection />
       <AboutUs/>
       <Footer />
+      <ScrollUpButton/>
       <ScrollEffects />
       </>
   );
