@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import millify from 'millify';
 import "./FavPro.css";
 import { Container, Row, Col } from 'react-bootstrap';
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 
 function stripHtmlTags(html) {
     let tmp = document.createElement("div");
@@ -48,7 +50,7 @@ function FavPro() {
 
     const fetchProperties = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/getProperty');
+            const res = await axios.get(`${serverUrl}/getProperty`);
             setProperties(res.data);
         } catch (error) {
             console.error("Error fetching properties:", error);
@@ -57,7 +59,7 @@ function FavPro() {
 
     const deleteItem = async (id) => {
         try {
-            await axios.delete(`http://localhost:3001/deleteProperty/${id}`);
+            await axios.delete(`${serverUrl}/deleteProperty/${id}`);
             setProperties((prev) => prev.filter(prop => prop.id !== id));
         } catch (error) {
             console.error("Error deleting property:", error);

@@ -4,12 +4,14 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import millify from 'millify';
 import './Modal.css'; // Import your CSS file
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 
 function Modal({ show, onClose, property }) {
   const handleSaveToFavorites = async () => {
     if (property) {
       try {
-        await axios.post('http://localhost:3001/addProperty', {
+        await axios.post(`${serverUrl}/addProperty`, {
           name: property.title,
           image: property.coverPhoto?.url,
           price: property.price,
