@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import millify from 'millify'; 
 import './Search.css';
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 
 function Search() {
     const [query, setQuery] = useState('');
@@ -29,7 +31,7 @@ function Search() {
         const fetchInitialData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get('http://localhost:3001/properties/list', {
+                const response = await axios.get(`${serverUrl}/properties/list`, {
                     params: {
                         locationExternalIDs: '5002',
                         purpose: 'for-sale',
@@ -49,7 +51,7 @@ function Search() {
             try {
                 const detailPromises = ids.map(async (id) => {
                     try {
-                        const response = await axios.get('http://localhost:3001/properties/detail', {
+                        const response = await axios.get(`${serverUrl}/properties/detail`, {
                             params: { externalID: id }
                         });
                         return response.data;
@@ -71,7 +73,7 @@ function Search() {
     const fetchSearchResults = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:3001/auto-complete', {
+            const response = await axios.get(`${serverUrl}/auto-complete`, {
                 params: {
                     query,
                     hitsPerPage: 3,
@@ -90,7 +92,7 @@ function Search() {
         const fetchDetails = async () => {
             const externalIDs = results.map(result => result.externalID).join(',');
             try {
-                const saleResponse = await axios.get('http://localhost:3001/properties/list', {
+                const saleResponse = await axios.get(`${serverUrl}/properties/list`, {
                     params: {
                         locationExternalIDs: externalIDs,
                         purpose: 'for-sale',
@@ -98,7 +100,7 @@ function Search() {
                     }
                 });
 
-                const rentResponse = await axios.get('http://localhost:3001/properties/list', {
+                const rentResponse = await axios.get(`${serverUrl}/properties/list`, {
                     params: {
                         locationExternalIDs: externalIDs,
                         purpose: 'for-rent',
@@ -109,7 +111,7 @@ function Search() {
                 if (Array.isArray(saleResponse.data.hits) && Array.isArray(rentResponse.data.hits)) {
                     const saleDetailedResultsPromises = saleResponse.data.hits.map(async (property) => {
                         try {
-                            const response = await axios.get('http://localhost:3001/properties/detail', {
+                            const response = await axios.get(`${serverUrl}/properties/detail`, {
                                 params: { externalID: property.externalID }
                             });
                             return response.data;
@@ -121,7 +123,7 @@ function Search() {
 
                     const rentDetailedResultsPromises = rentResponse.data.hits.map(async (property) => {
                         try {
-                            const response = await axios.get('http://localhost:3001/properties/detail', {
+                            const response = await axios.get(`${serverUrl}/properties/detail`, {
                                 params: { externalID: property.externalID }
                             });
                             return response.data;

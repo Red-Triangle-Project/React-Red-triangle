@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BProperty from './BProp/BProp.js';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import './BuyProperty.css'; 
+import './BuyProperty.css';
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
  
 const chunkArray = (array, size) => {
   const result = [];
@@ -45,7 +47,7 @@ function BuyProperty() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/properties/list', {
+        const response = await axios.get(`${serverUrl}/properties/list`, {
           params: {
             locationExternalIDs: '5002',
             purpose: 'for-sale',

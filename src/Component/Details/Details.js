@@ -7,6 +7,8 @@ import './Details.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import verified from '../assets/img/verified-icon.jpg'
 import notverified from '../assets/img/Notverified-icon.png'
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 
 function Details() {
   const { id } = useParams();
@@ -17,7 +19,7 @@ function Details() {
   useEffect(() => {
     const fetchPropertyDetails = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/properties/detail', {
+        const response = await axios.get(`${serverUrl}/properties/detail`, {
           params: { externalID: id }
         });
         setProperty(response.data);
